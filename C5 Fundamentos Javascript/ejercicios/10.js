@@ -3,10 +3,14 @@ function esFechaValida(fecha) {
   // Comprueba si este corresponde a una fecha válida.
   // Si es así, retorna true, sino retorna false.
   // Tu código:
-  if (typeof fecha === "string") return false;
 
   //if (Date.Parse(fecha) === NaN) return false;
-  //var fechaObj = new Date(fecha);
+
+  if (typeof fecha === "string") return false;  // si es un formato invalido devuelve false
+
+  var fechaObj = new Date(fecha);
+
+  if (isNaN(fechaObj.getTime())) return false;  // si el objeto Date no  puede crear la fecha devuelve NaN
 
   var dia = fechaObj.getDate();
   var mes = fechaObj.getMonth() + 1;
@@ -16,13 +20,6 @@ function esFechaValida(fecha) {
   if (año <= 0) return false;
 
   return true;
-
 }
-
-/* var fecha = "invalid"
-var fechaObj = new Date(fecha);
-
-console.log((fechaObj));
-console.log(typeof (fecha)); */
 
 module.exports = esFechaValida;
