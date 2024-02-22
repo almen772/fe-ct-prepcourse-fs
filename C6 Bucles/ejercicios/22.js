@@ -6,17 +6,21 @@ function combine(str1, str2, str3) {
    // combine("abc", "", "123") == "a1b2c3"
    // combine("abc", "12345", "") == "a1b2c345"
    // combine("abc", "12345", "67") == "a16b27c345"
-   var combine = "";
-   if (str1 != "" && str2 != "" && str3 != "") {
-      for (var i = 0; i < Math.max(str1.length, str2.length, str3.length); i++) {
-         combine += str1[i] + str2[i] + str3[i];
-      }
+   var concatena = "";
+   var i = 0;
+   if (str1 === "" && str2 === "" && str3 === "") return concatena;
+   while (i < Math.max(str1.length, str2.length, str3.length)) {
+      if (str1[i] !== undefined && str1[i] !== "") concatena += str1[i];
+      if (str2[i] !== undefined && str2[i] !== "") concatena += str2[i];
+      if (str3[i] !== undefined && str3[i] !== "") concatena += str3[i];
+      i += 1
    }
-   return combine;
+   /* for (var i = 0; i < Math.max(str1.length, str2.length, str3.length); i++) {
+      if (str1[i] !== undefined && str1[i] !== "") concatena += str1[i];
+      if (str2[i] !== undefined && str2[i] !== "") concatena += str2[i];
+      if (str3[i] !== undefined && str3[i] !== "") concatena += str3[i];
+   } */
+   return concatena;
 }
-
-console.log(combine("abc", "", "123"));
-//console.log(combine("abc", "12345", ""));
-//console.log(combine("abc", "12345", "67"));
 
 module.exports = combine;
