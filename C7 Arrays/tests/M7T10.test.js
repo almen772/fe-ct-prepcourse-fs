@@ -21,7 +21,7 @@ describe('obtenerPrimerStringLargo', () => {
 
    it('should return undefined if no string with more than 5 characters is found', () => {
       expect(
-         obtenerPrimerStringLargo(['hi', 'there', 'how', 'are', 'you'])
+         obtenerPrimerStringLargo(['hi', 'how', 'are', 'you']) //contenia "there" en indice 1 con lo cual lña funcion nunca iba a devolver undefined
       ).toBeUndefined();
       expect(
          obtenerPrimerStringLargo(['this', 'is', 'a', 'test'])
