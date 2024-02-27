@@ -5,6 +5,17 @@ function breakStatement(num) {
   // la ejecución y retornar el string: "Se interrumpió la ejecución".
   // PISTA: Utiliza el statement 'break'.
   // Tu código:
+  var array = [];
+  var i = 0;
+  var sum = num;
+  while (i < 10) {
+    sum += 2;
+    i += 1;
+    array.push(sum);
+    if (array.length === sum) break;
+  }
+  if (array.length === sum) return "Se interrumpió la ejecución";
+  else return array;
 }
 
 module.exports = breakStatement;
